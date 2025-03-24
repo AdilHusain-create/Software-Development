@@ -1,0 +1,6 @@
+~ Read About EMMET ?
+~ What is CDN (Content Delivery Network) ?
+~ What is crossorigin in script tag
+~ Async and Defer
+~ why CSS file into <head> tag
+~ What is rel in <link> tag
