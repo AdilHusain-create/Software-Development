@@ -1,0 +1,104 @@
+~ Read About EMMET ?
+	EMMET is a powerful in-built tookit for various code editor like VS code to generate HTML & CSS boiler code.
+
+------------------------------------------------------------------------
+
+~ What is CDN (Content Delivery Network) ?
+	CDN aka Content Delivery Network is a distributed network of servers kept over the different places, When a client makes a request it goes to a desired Server top fetch the request  to serve the client/browser.
+	
+	How CDN Works - 
+	1. When we request  something from browser - xxx.com
+	2. DNS (Domain Namespace System) route the request to  nearest CDN server.
+	3. If the requested content is already cached in CND server, it is serves immedicatley to client/browser.
+	4.  If not the CDN Server will fetch it from Origin Server, caches it and then serve to the client browser, Future requests will get the content from cached version whichi wuill reduce the load on origin Server.
+	
+	Key Benefits - 
+	- Faster Load Times – Content is served from the nearest server, 	reducing latency.
+	- Reduces Server Load – Offloads traffic from the origin server, preventing overload.
+	- Better Availability & Uptime – Distributes traffic across multiple servers, preventing downtime.
+	- DDoS Protection & Security – Many CDNs have built-in security features to mitigate attacks.
+	- Global Reach – Users worldwide get fast access to content.
+	- SEO Benefits – Faster loading times improve SEO rankings.
+	
+	Top CDN Providers - 
+	- Cloudfalre
+	- Akamai
+	- AWS - CloudFront
+	- Azure CDN
+	- GCP CDN
+	- Fastly
+------------------------------------------------------------------------
+	
+~ 	What? is crossorigin in script tag.
+	"crossorigin" attribute of script tag is used for loading the external scripts from a different origin and it'll determines how browsers will handle CORS for that script.
+	
+	How?
+	When browser will loads the script from another origin like from CDN it will fetch it by 2 ways
+	1. crossorigin="anonymous" - default way.
+	2. crossorigin="use-credentials" - Sends a request with credentials
+	
+	Why?
+	1. Improves Security.
+	2. Handles CORS Error - Helps to avoid blocked requests for cross origin scripts.
+	
+	
+	
+	
+------------------------------------------------------------------------
+~ Async and Defer
+	
+	What?
+	
+	1. Using normal <script src="xxx.com" /> tag
+	When using normal <script> tag HTML parsing will stop once it reaches to <script> tag,
+	then it'll fetches the scripts from CDN network and execute it then and there in browser.
+	After execution of scripts HTML parsing will get continue.
+
+	2. <script async src="xxx.com" />
+	When we use async boolean attribute with <script> tag HTML parsing will  goes in parallel with fetching of the script from network asynchronously.
+	Once the scripts are available the HTML parsing will stop and the scripts will get executed in the browser.
+	After execution of scripts HTML parsing will get continue.
+
+
+	3. <script defer src="xxx.com" />
+	When we use defer boolean attribute with <script> tag HTML parsing will  goes on continously and scripts are fetches from network in parallel.
+	Once the  HTML parsing gets completes then the browser will execute the available scripts.
+
+	When?
+	1. The async attribute does not gives us the  guarantee of order of executions of scripts in a particular order. If there are multiple scripts which are dependant on one another if we use "async" attribute will break our code So  we must use "defer" attribute as it follows the order of execution.
+	
+	2. Suppose we need to export external scripts which are independant of our code, Its good to use "async" attribute for better performance.
+	
+	
+------------------------------------------------------------------------
+~	Why? CSS file into <head> tag.
+	The <head> section of HTML contains the metadata and resourses needed before rendering the page. so we put CSS files in head tag to ensure the styles are applied before the page content is displayed.
+	
+	Advantages?
+	- Faster page Rendering - Browser can apply styles before showing elements.
+	- Better User Experience.
+	- SEO benefits.
+	- Prevents FOUC.
+	
+------------------------------------------------------------------------
+~ 	What? is rel in <link> tag.
+	the "rel"  aka relationship attribute defines the relationship between current document and linked resourse.
+	
+	Examples?
+	- <link rel="stylesheet" href="xxx.css" />
+	Tells browser that we links an external CSS file.
+	
+	- <link rel="icon" href="xxx.css" />
+	Defines an icon 
+	
+	- <link rel="preload" href="xxx.com" />
+	Loads resourses early like fonts or scripts.
+	
+	- <link rel="alternate" href="xxx.css" />
+	Defines an alternate version of a page (e.g., for different languages)
+
+	Why?
+	- Improves Performance
+	- Ensures proper styling
+	
+------------------------------------------------------------------------
